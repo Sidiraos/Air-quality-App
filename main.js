@@ -1,5 +1,4 @@
 import pollutionScale from './pollutionScaleData';
-
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 async function getPollutionData() {
