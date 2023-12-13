@@ -51,7 +51,7 @@ function populateUI(data) {
 	info$.text('here is ' + data.city + ' situation ');
 	city$.text(data.city);
 	airIndex$.text(data.aqi);
-	emojiImg$.attr('src', `/ressources/${data.src}.svg`);
+	emojiImg$.attr('src', `./ressources/${data.src}.svg`);
 	emojiImg$.attr('alt', data.src + ' emoji');
 	$('body').css('background', data.background);
 	pollutionInfo$.text(data.quality);
@@ -60,7 +60,7 @@ function populateUI(data) {
 
 function displayError(text) {
 	info$.text(text);
-	emojiImg$.attr('src', `/ressources/browser.svg`);
+	emojiImg$.attr('src', `./ressources/browser.svg`);
 	emojiImg$.attr('alt', 'browser emoji');
 }
 
