@@ -4,7 +4,9 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 async function getPollutionData() {
 	try {
 		addLoaderAnimation();
-		const response = await fetch(`https://api.airvisual.com/v2/nearest_city?key=${API_KEY}`);
+		const response = await fetch(
+			`https://api.airvisual.com/v2/nearest_city?key=${API_KEY}`
+		);
 		if (response.ok) {
 			removeLoaderAnimation();
 			const data = await response.json();
@@ -48,7 +50,7 @@ function populateUI(data) {
 	info$.text('here is ' + data.city + ' situation ');
 	city$.text(data.city);
 	airIndex$.text(data.aqi);
-	emojiImg$.attr('src', `ressources/${data.src}.svg`);
+	emojiImg$.attr('src', `/ressources/${data.src}.svg`);
 	emojiImg$.attr('alt', data.src + ' emoji');
 	$('body').css('background', data.background);
 	pollutionInfo$.text(data.quality);
@@ -57,7 +59,7 @@ function populateUI(data) {
 
 function displayError(text) {
 	info$.text(text);
-	emojiImg$.attr('src', `ressources/browser.svg`);
+	emojiImg$.attr('src', `/ressources/browser.svg`);
 	emojiImg$.attr('alt', 'browser emoji');
 }
 
