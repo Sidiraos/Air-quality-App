@@ -2,9 +2,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	base: '/Air-quality-App/', // Ajoutez cette ligne
 	build: {
-		base: '/Air-quality-App/', // Base URL pour les ressources statiques
+		sourcemap: true,
+		outDir: 'dist',
+		assetsDir: 'assets',
 	},
 });
-
-
